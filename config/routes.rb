@@ -1,13 +1,14 @@
 SampleApp::Application.routes.draw do
+
+
+  match '/signup',  :to => 'users#new'
+
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   
-  #match '/', :to => 'pages#home'
+  # match '/', :to => 'pages#home'
   root :to => 'pages#home'
-  root_path => '/'
-  root_url  => 'http://localhost:3000/'
-  
   
   get "pages/help"
   
@@ -16,6 +17,8 @@ SampleApp::Application.routes.draw do
   get "pages/contact"
   
   get "pages/about"
+  
+  get "users/new"
   
 
   # The priority is based upon order of creation:
